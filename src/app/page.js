@@ -45,13 +45,13 @@ export default function Home() {
       <header className="header">
         <div className="container">
           <div className="logo">
-            <span style={{color: 'var(--primary-blue)', fontSize: '1.5rem'}}>❖</span>
+            <span className="logo-icon">❖</span>
             InspectPro
           </div>
           <nav className="nav-desktop">
             <a href="#" className="nav-link" style={{color: 'var(--primary-blue)'}}>Products</a>
             <a href="#" className="nav-link">Solutions</a>
-            <a href="#" className="nav-link">Resources v</a>
+            <a href="#" className="nav-link">Resources ▾</a>
             <a href="#" className="nav-link">Pricing</a>
           </nav>
           <div className="header-actions">
@@ -70,12 +70,13 @@ export default function Home() {
           <a href="#" className="nav-link">Resources</a>
           <a href="#" className="nav-link">Pricing</a>
           <a href="#" className="nav-link">Login</a>
-          <button className="btn-primary" style={{marginTop: '1rem'}}>Get Started</button>
+          <button className="btn-primary" style={{marginTop: '0.5rem'}}>Get Started</button>
         </div>
       </header>
 
       {/* Hero Section */}
       <section className="hero">
+        <div className="hero-bg"></div>
         <div className="container">
           <div className="hero-content">
             <div className="hero-tag">Forklift Safety</div>
@@ -152,7 +153,7 @@ export default function Home() {
       </section>
 
       {/* Info Section */}
-      <section className="info-section section-padding">
+      <section className="info-section">
         <div className="container">
           <div className="info-text">
             <h2>What is a Forklift Inspection Checklist?</h2>
@@ -160,14 +161,14 @@ export default function Home() {
             <p>Forklift inspection can benefit correct equipment safety and compliance with regulatory requirements.</p>
           </div>
           <div className="info-callout">
-            <span style={{fontSize: '1.5rem', color: 'var(--primary-blue)'}}>ℹ</span>
+            <span style={{fontSize: '1.25rem', color: 'var(--primary-blue)'}}>ℹ</span>
             <p>Key importance are outcomes of compliance being regulatory requirements are met to <strong>regulatory requirements.</strong></p>
           </div>
         </div>
       </section>
 
       {/* Checklist Details Section */}
-      <section className="checklist-details section-padding">
+      <section className="checklist-details">
         <div className="container">
           <h2>What's included in the checklist?</h2>
           <div className="checklist-table">
@@ -185,7 +186,7 @@ export default function Home() {
                 <button className="status-btn">NA ▾</button>
               </div>
               <div className="checklist-item-note">
-                <div style={{fontSize: '0.85rem', marginBottom: '0.35rem', fontWeight: 600, color: 'var(--dark-navy)'}}>Note</div>
+                <div style={{fontSize: '0.8rem', marginBottom: '0.25rem', fontWeight: 600, color: 'var(--text-main)'}}>Note</div>
                 <input type="text" className="note-input" placeholder="Add an open note (optional)" />
               </div>
             </div>
@@ -204,7 +205,7 @@ export default function Home() {
                 <button className="status-btn">NA ▾</button>
               </div>
               <div className="checklist-item-note">
-                <div style={{fontSize: '0.85rem', marginBottom: '0.35rem', fontWeight: 600, color: 'var(--dark-navy)'}}>Note</div>
+                <div style={{fontSize: '0.8rem', marginBottom: '0.25rem', fontWeight: 600, color: 'var(--text-main)'}}>Note</div>
                 <input type="text" className="note-input" placeholder="Use note here..." />
               </div>
             </div>
@@ -223,7 +224,7 @@ export default function Home() {
                 <button className="status-btn">NA ▾</button>
               </div>
               <div className="checklist-item-note">
-                <div style={{fontSize: '0.85rem', marginBottom: '0.35rem', fontWeight: 600, color: 'var(--dark-navy)'}}>Note (optional)</div>
+                <div style={{fontSize: '0.8rem', marginBottom: '0.25rem', fontWeight: 600, color: 'var(--text-main)'}}>Note (optional)</div>
                 <div className="note-alert">▲ Need maintenance</div>
               </div>
             </div>
@@ -242,7 +243,7 @@ export default function Home() {
                 <button className="status-btn">NA ▾</button>
               </div>
               <div className="checklist-item-note">
-                <div style={{fontSize: '0.85rem', marginBottom: '0.35rem', fontWeight: 600, color: 'var(--dark-navy)'}}>Note</div>
+                <div style={{fontSize: '0.8rem', marginBottom: '0.25rem', fontWeight: 600, color: 'var(--text-main)'}}>Note</div>
                  <input type="text" className="note-input" placeholder="Use note here..." />
               </div>
             </div>
@@ -251,7 +252,7 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="features section-padding">
+      <section className="features">
         <div className="container">
           <h2>Make every forklift inspection consistent</h2>
           <p>Make sure forklift assessment consistent and<br/>inspections procedures for the equipment operators.</p>
@@ -281,7 +282,7 @@ export default function Home() {
       </section>
 
       {/* How It Works Section */}
-      <section className="how-it-works section-padding">
+      <section className="how-it-works">
         <div className="container">
           <h2>How It Works</h2>
           <div className="steps-grid">
@@ -308,7 +309,7 @@ export default function Home() {
       </section>
 
       {/* Built For Teams */}
-      <section className="built-for section-padding">
+      <section className="built-for">
         <div className="container">
           <h2>Built for teams that inspect equipment every day</h2>
           <div className="teams-grid">
@@ -332,7 +333,7 @@ export default function Home() {
       </section>
 
       {/* FAQ Section */}
-      <section className="faq-section section-padding">
+      <section className="faq-section">
         <div className="container" style={{maxWidth: '800px'}}>
           <h2>FAQ</h2>
           <div className="faq-list">
@@ -352,7 +353,7 @@ export default function Home() {
       </section>
 
       {/* Final CTA */}
-      <section className="cta-section section-bg-dark">
+      <section className="cta-section">
         <div className="container">
           <h2>Ready to simplify your forklift inspections?</h2>
           <p>Start with a structured checklist your team can use consistently.</p>
@@ -364,12 +365,12 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="footer section-bg-dark">
+      <footer className="footer">
         <div className="container">
           <div className="footer-grid">
             <div className="footer-col" style={{flex: 2}}>
               <div className="footer-logo">
-                <span style={{color: 'var(--primary-blue)'}}>❖</span>
+                <span className="footer-logo-icon">❖</span>
                 InspectPro
               </div>
               <p className="footer-desc">InspectPro is a frequent company specialized in equipment inspections and National SaaS company.</p>
