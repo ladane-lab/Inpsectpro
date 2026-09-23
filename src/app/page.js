@@ -1,6 +1,24 @@
 'use client';
 
 import React, { useState } from 'react';
+import {
+  ClipboardList,
+  AlertTriangle,
+  FileText,
+  Layers,
+  Search,
+  CheckSquare,
+  Warehouse,
+  HardHat,
+  Settings,
+  ChevronDown,
+  Box,
+  Info,
+  Check,
+  X,
+  Menu,
+  X as CloseIcon
+} from 'lucide-react';
 
 export default function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -45,13 +63,13 @@ export default function Home() {
       <header className="header">
         <div className="container">
           <div className="logo">
-            <span className="logo-icon">❖</span>
+            <Box color="#0055d2" size={26} strokeWidth={2.5} />
             InspectPro
           </div>
           <nav className="nav-desktop">
             <a href="#" className="nav-link" style={{color: 'var(--primary-blue)'}}>Products</a>
             <a href="#" className="nav-link">Solutions</a>
-            <a href="#" className="nav-link">Resources ▾</a>
+            <a href="#" className="nav-link" style={{display: 'flex', alignItems: 'center', gap: '4px'}}>Resources <ChevronDown size={14}/></a>
             <a href="#" className="nav-link">Pricing</a>
           </nav>
           <div className="header-actions">
@@ -59,7 +77,7 @@ export default function Home() {
             <button className="btn-primary">Get Started</button>
           </div>
           <button className="mobile-menu-btn" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-            {isMobileMenuOpen ? '✕' : '☰'}
+            {isMobileMenuOpen ? <CloseIcon size={28} /> : <Menu size={28} />}
           </button>
         </div>
         
@@ -96,7 +114,7 @@ export default function Home() {
                 <div className="mock-row" key={item.id}>
                   <div className="mock-label" onClick={() => toggleMockCheck(item.id)}>
                     <div className={`mock-checkbox ${item.checked ? 'checked' : ''}`}>
-                      {item.checked && '✓'}
+                      {item.checked && <Check size={12} strokeWidth={3} />}
                     </div>
                     {item.label}
                   </div>
@@ -104,7 +122,7 @@ export default function Home() {
                     <div 
                       className={`mock-circle pass ${item.status === 'pass' ? 'active' : ''}`}
                       onClick={() => setMockStatus(item.id, 'pass')}
-                    >✓</div>
+                    >{item.status === 'pass' ? <Check size={14} strokeWidth={3} /> : <Check size={14} strokeWidth={2} />}</div>
                     <div 
                       className={`mock-circle warn ${item.status === 'warn' ? 'active' : ''}`}
                       onClick={() => setMockStatus(item.id, 'warn')}
@@ -161,7 +179,7 @@ export default function Home() {
             <p>Forklift inspection can benefit correct equipment safety and compliance with regulatory requirements.</p>
           </div>
           <div className="info-callout">
-            <span style={{fontSize: '1.25rem', color: 'var(--primary-blue)'}}>ℹ</span>
+            <Info size={24} color="var(--primary-blue)" style={{flexShrink: 0, marginTop: '2px'}} />
             <p>Key importance are outcomes of compliance being regulatory requirements are met to <strong>regulatory requirements.</strong></p>
           </div>
         </div>
@@ -181,9 +199,9 @@ export default function Home() {
                 </div>
               </div>
               <div className="checklist-item-status">
-                <button className="status-btn active pass">✓ Pass</button>
-                <button className="status-btn">✗ Fail</button>
-                <button className="status-btn">NA ▾</button>
+                <button className="status-btn active pass"><Check size={14} strokeWidth={3} /> Pass</button>
+                <button className="status-btn"><X size={14} strokeWidth={2} /> Fail</button>
+                <button className="status-btn">NA <ChevronDown size={14} /></button>
               </div>
               <div className="checklist-item-note">
                 <div style={{fontSize: '0.8rem', marginBottom: '0.25rem', fontWeight: 600, color: 'var(--text-main)'}}>Note</div>
@@ -200,9 +218,9 @@ export default function Home() {
                 </div>
               </div>
               <div className="checklist-item-status">
-                <button className="status-btn">✓ Pass</button>
-                <button className="status-btn active warn">▲ Fail</button>
-                <button className="status-btn">NA ▾</button>
+                <button className="status-btn"><Check size={14} strokeWidth={2} /> Pass</button>
+                <button className="status-btn active warn"><AlertTriangle size={14} strokeWidth={3} /> Fail</button>
+                <button className="status-btn">NA <ChevronDown size={14} /></button>
               </div>
               <div className="checklist-item-note">
                 <div style={{fontSize: '0.8rem', marginBottom: '0.25rem', fontWeight: 600, color: 'var(--text-main)'}}>Note</div>
@@ -219,13 +237,13 @@ export default function Home() {
                 </div>
               </div>
               <div className="checklist-item-status">
-                <button className="status-btn active pass">✓ Pass</button>
-                <button className="status-btn">✗ Fail</button>
-                <button className="status-btn">NA ▾</button>
+                <button className="status-btn active pass"><Check size={14} strokeWidth={3} /> Pass</button>
+                <button className="status-btn"><X size={14} strokeWidth={2} /> Fail</button>
+                <button className="status-btn">NA <ChevronDown size={14} /></button>
               </div>
               <div className="checklist-item-note">
                 <div style={{fontSize: '0.8rem', marginBottom: '0.25rem', fontWeight: 600, color: 'var(--text-main)'}}>Note (optional)</div>
-                <div className="note-alert">▲ Need maintenance</div>
+                <div className="note-alert"><AlertTriangle size={14} /> Need maintenance</div>
               </div>
             </div>
             
@@ -238,9 +256,9 @@ export default function Home() {
                 </div>
               </div>
               <div className="checklist-item-status">
-                <button className="status-btn active pass">✓ Pass</button>
-                <button className="status-btn">✗ Fail</button>
-                <button className="status-btn">NA ▾</button>
+                <button className="status-btn active pass"><Check size={14} strokeWidth={3} /> Pass</button>
+                <button className="status-btn"><X size={14} strokeWidth={2} /> Fail</button>
+                <button className="status-btn">NA <ChevronDown size={14} /></button>
               </div>
               <div className="checklist-item-note">
                 <div style={{fontSize: '0.8rem', marginBottom: '0.25rem', fontWeight: 600, color: 'var(--text-main)'}}>Note</div>
@@ -258,22 +276,30 @@ export default function Home() {
           <p>Make sure forklift assessment consistent and<br/>inspections procedures for the equipment operators.</p>
           <div className="features-grid">
             <div className="feature-card">
-              <div className="feature-icon">📋</div>
+              <div className="feature-icon-wrapper">
+                <ClipboardList size={24} color="var(--primary-blue)" />
+              </div>
               <h3>Standardize inspections</h3>
               <p>Standardize inspections consistent. Inspections, operations, and equipment.</p>
             </div>
             <div className="feature-card">
-              <div className="feature-icon">⚠️</div>
+              <div className="feature-icon-wrapper">
+                <AlertTriangle size={24} color="var(--primary-blue)" />
+              </div>
               <h3>Identify issues early</h3>
               <p>Identify issues early to measure and consistent, operators expecting standards.</p>
             </div>
             <div className="feature-card">
-              <div className="feature-icon">📄</div>
+              <div className="feature-icon-wrapper">
+                <FileText size={24} color="var(--primary-blue)" />
+              </div>
               <h3>Keep inspection records organized</h3>
               <p>Keep inspection records organized, and inspection records organized.</p>
             </div>
             <div className="feature-card">
-              <div className="feature-icon">📚</div>
+              <div className="feature-icon-wrapper">
+                <Layers size={24} color="var(--primary-blue)" />
+              </div>
               <h3>Give teams a simple process to follow</h3>
               <p>Give teams a simple process to follow.</p>
             </div>
@@ -287,19 +313,19 @@ export default function Home() {
           <h2>How It Works</h2>
           <div className="steps-grid">
             <div className="step-card">
-              <div className="step-icon">📄</div>
+              <FileText size={40} className="step-icon" />
               <h3>01 —</h3>
               <h4>Choose your checklist</h4>
               <p>Choose your checklist to start 01 — Choose your checklist.</p>
             </div>
             <div className="step-card">
-              <div className="step-icon">🔍</div>
+              <Search size={40} className="step-icon" />
               <h3>02 —</h3>
               <h4>Complete the inspection</h4>
               <p>Complete the inspection the inspector and complete the inspection.</p>
             </div>
             <div className="step-card">
-              <div className="step-icon">📋</div>
+              <CheckSquare size={40} className="step-icon" />
               <h3>03 —</h3>
               <h4>Record and act on findings</h4>
               <p>Record the process and consent and asset — record and act on findings.</p>
@@ -314,17 +340,23 @@ export default function Home() {
           <h2>Built for teams that inspect equipment every day</h2>
           <div className="teams-grid">
             <div className="team-card">
-              <div className="team-icon">🏭</div>
+              <div className="team-icon-wrapper">
+                <Warehouse size={24} color="var(--primary-blue)" />
+              </div>
               <h3>Warehouse operations</h3>
               <p>Warehouse operations in warehouse operations and low-attention operations in warehouse operations.</p>
             </div>
             <div className="team-card">
-              <div className="team-icon">🚧</div>
+              <div className="team-icon-wrapper">
+                <HardHat size={24} color="var(--primary-blue)" />
+              </div>
               <h3>Construction sites</h3>
               <p>Construction sites equipment and construction sites in a manufacturing facilities.</p>
             </div>
             <div className="team-card">
-              <div className="team-icon">⚙️</div>
+              <div className="team-icon-wrapper">
+                <Settings size={24} color="var(--primary-blue)" />
+              </div>
               <h3>Manufacturing facilities</h3>
               <p>Manufacturing facilities are commercial facilities and solutions for manufacturing facilities.</p>
             </div>
@@ -341,7 +373,7 @@ export default function Home() {
               <div className={`faq-item ${openFaq === index ? 'open' : ''}`} key={index}>
                 <button className="faq-question" onClick={() => setOpenFaq(openFaq === index ? -1 : index)}>
                   {faq.question}
-                  <span className="faq-icon">▼</span>
+                  <ChevronDown className="faq-icon" size={18} />
                 </button>
                 <div className="faq-answer">
                   {faq.answer}
@@ -370,7 +402,7 @@ export default function Home() {
           <div className="footer-grid">
             <div className="footer-col" style={{flex: 2}}>
               <div className="footer-logo">
-                <span className="footer-logo-icon">❖</span>
+                <Box color="var(--primary-blue)" size={24} strokeWidth={2.5} />
                 InspectPro
               </div>
               <p className="footer-desc">InspectPro is a frequent company specialized in equipment inspections and National SaaS company.</p>
@@ -379,7 +411,7 @@ export default function Home() {
             {/* Desktop & Mobile Dropdown Columns */}
             <div className={`footer-col links-col ${openFooter === 'product' ? 'open' : ''}`}>
               <button className="footer-mobile-toggle" onClick={() => setOpenFooter(openFooter === 'product' ? null : 'product')}>
-                Product <span>▼</span>
+                Product <ChevronDown size={16} />
               </button>
               <h4 className="desktop-only">Product</h4>
               <ul>
@@ -391,7 +423,7 @@ export default function Home() {
             
             <div className={`footer-col links-col ${openFooter === 'solutions' ? 'open' : ''}`}>
               <button className="footer-mobile-toggle" onClick={() => setOpenFooter(openFooter === 'solutions' ? null : 'solutions')}>
-                Solutions <span>▼</span>
+                Solutions <ChevronDown size={16} />
               </button>
               <h4 className="desktop-only">Solutions</h4>
               <ul>
@@ -402,7 +434,7 @@ export default function Home() {
             
             <div className={`footer-col links-col ${openFooter === 'resources' ? 'open' : ''}`}>
               <button className="footer-mobile-toggle" onClick={() => setOpenFooter(openFooter === 'resources' ? null : 'resources')}>
-                Resources <span>▼</span>
+                Resources <ChevronDown size={16} />
               </button>
               <h4 className="desktop-only">Resources</h4>
               <ul>
@@ -414,7 +446,7 @@ export default function Home() {
             
             <div className={`footer-col links-col ${openFooter === 'company' ? 'open' : ''}`}>
               <button className="footer-mobile-toggle" onClick={() => setOpenFooter(openFooter === 'company' ? null : 'company')}>
-                Company <span>▼</span>
+                Company <ChevronDown size={16} />
               </button>
               <h4 className="desktop-only">Company</h4>
               <ul>
